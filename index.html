@@ -1,55 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast £Arn Global - Licensed Global Trading Broker</title>
-    <meta name="description" content="Fast £Arn Global is a regulated international brokerage firm offering secure, high-yield investment plans in forex, cryptocurrencies, commodities, and indices.">
+    <title>Bitcoin Lerne Investition - Professionelle Bitcoin-Investitionsplattform</title>
+    <meta name="description" content="Bitcoin Lerne Investition ist eine regulierte deutsche Plattform für sichere und hochrentable Bitcoin-Investitionen. Erzielen Sie attraktive Renditen in nur 48 Stunden.">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0a1f3d;
-            --accent: #d4af37;
+            --primary: #003366;     /* Tiefes Deutsches Blau */
+            --accent: #ffcc00;      /* Goldgelb – vertrauensvoll und premium */
             --text: #ffffff;
             --light: #f8f9fa;
             --dark: #1a1a1a;
             --gray: #e9ecef;
         }
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light); color: #333; line-height: 1.7; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light); color: #333; line-height: 1.7; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
+
+        /* Welcome Page */
+        #welcome-page {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: linear-gradient(rgba(0,51,102,0.92), rgba(0,51,102,0.92)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: var(--text); z-index: 9999;
+            transition: opacity 1.5s ease-out, visibility 1.5s;
+        }
+        #welcome-page h1 { font-size: 5em; margin: 0; }
+        #welcome-page p { font-size: 1.8em; max-width: 800px; margin: 20px 0 40px; }
+        #welcome-page .btn { padding: 18px 50px; font-size: 1.5em; }
+
         header { background: var(--primary); color: var(--text); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         nav { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
         .logo { font-size: 1.8em; font-weight: bold; }
         nav ul { list-style: none; display: flex; gap: 35px; margin: 0; padding: 0; }
         nav a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s; }
         nav a:hover { color: var(--accent); }
-        .hero { background: linear-gradient(rgba(10,31,61,0.85), rgba(10,31,61,0.85)), url('https://images.unsplash.com/photo-1605792657660-73a71edcd2e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; text-align: center; padding: 180px 20px 120px; color: var(--text); }
+        .hero { background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.unsplash.com/photo-1621504450181-5d356f61d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; text-align: center; padding: 180px 20px 120px; color: var(--text); }
         .hero h1 { font-size: 4em; margin: 0 0 20px; }
         .hero p { font-size: 1.6em; max-width: 800px; margin: 0 auto 30px; }
         .btn { background: var(--accent); color: var(--primary); padding: 16px 36px; border: none; border-radius: 6px; font-size: 1.2em; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
-        .btn:hover { background: #e6c244; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
+        .btn:hover { background: #ffd633; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,204,0,0.3); }
         section { max-width: 1300px; margin: 100px auto; padding: 0 30px; }
         h2 { text-align: center; font-size: 2.8em; margin-bottom: 50px; }
         .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .plan { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; padding: 50px 30px; position: relative; transition: all 0.4s; overflow: hidden; }
+        .plan { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; padding: 50px 30px; position: relative; transition: all 0.4s; }
         .plan:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
         .plan.recommended { border: 4px solid var(--accent); }
-        .plan.recommended::before { content: "MOST POPULAR"; background: var(--accent); color: var(--primary); padding: 12px 30px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); border-radius: 6px; font-weight: bold; font-size: 0.9em; }
+        .plan.recommended::before { content: "EMPFOHLEN"; background: var(--accent); color: var(--primary); padding: 12px 30px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); border-radius: 6px; font-weight: bold; font-size: 0.9em; }
         .plan h3 { font-size: 2.2em; margin-bottom: 20px; }
         .plan .price { font-size: 4em; font-weight: bold; color: var(--accent); margin: 25px 0; }
         .plan ul { list-style: none; padding: 0; margin: 30px 0; }
         .plan li { margin: 18px 0; font-size: 1.1em; }
         .plan li i { color: var(--accent); margin-right: 10px; }
         .form-section { max-width: 900px; margin: 100px auto; padding: 50px; background: white; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .form-section h2 { margin-bottom: 40px; }
         #selected-plan { text-align: center; font-size: 1.4em; font-weight: bold; color: var(--primary); margin-bottom: 40px; padding: 20px; background: #f0f4ff; border-radius: 8px; }
         form { display: grid; gap: 25px; }
         label { font-weight: 600; color: var(--primary); }
         input, select { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 1.1em; }
         .submit-btn { background: var(--accent); color: var(--primary); padding: 18px; font-size: 1.3em; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s; }
-        .submit-btn:hover { background: #e6c244; transform: translateY(-3px); }
+        .submit-btn:hover { background: #ffd633; transform: translateY(-3px); }
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .feature { text-align: center; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
         .feature i { font-size: 3em; color: var(--accent); margin-bottom: 20px; }
@@ -57,59 +71,263 @@
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1300px; margin: 0 auto; }
         .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; font-style: italic; }
         .testimonial strong { display: block; margin-top: 15px; font-style: normal; }
-        .withdrawal-popup { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 30px; text-align: center; margin: 80px auto; max-width: 1300px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .withdrawal-popup { background: linear-gradient(135deg, #004080, #0066cc); color: white; padding: 30px; text-align: center; margin: 80px auto; max-width: 1300px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .withdrawal-popup h3 { font-size: 2.5em; margin: 0 0 20px; }
         .withdrawal-popup p { font-size: 1.3em; margin: 0; }
         .withdrawal-amount { font-size: 3.5em; font-weight: bold; color: var(--accent); margin: 15px 0; }
+        .trust-badges { text-align: center; margin: 50px 0; }
+        .trust-badges img { height: 70px; margin: 0 25px; filter: grayscale(80%); transition: filter 0.3s; }
+        .trust-badges img:hover { filter: grayscale(0%); }
         footer { background: var(--dark); color: #aaa; padding: 60px 30px 30px; text-align: center; }
         .footer-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap; }
         .footer-links a { color: #aaa; text-decoration: none; transition: color 0.3s; }
         .footer-links a:hover { color: var(--accent); }
-        .reg-info { margin: 30px 0; font-size: 0.95em; }
-        .risk { font-size: 0.9em; max-width: 1000px; margin: 30px auto 0; line-height: 1.6; }
+        #live-chat-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s;
+        }
+        #live-chat-btn:hover { transform: scale(1.1); }
+
         @media (max-width: 768px) {
+            #welcome-page h1 { font-size: 3.5em; }
+            #welcome-page p { font-size: 1.4em; }
             .hero h1 { font-size: 2.8em; }
-            .hero p { font-size: 1.3em; }
             nav ul { flex-direction: column; gap: 15px; }
             .plans { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Fast £Arn Global</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#plans">Investment Plans</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#registration">Register</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <h1>Fast £Arn Global</h1>
-        <p>Licensed International Brokerage | Secure & High-Yield Trading Solutions</p>
-        <a href="#plans" class="btn">Explore Investment Plans</a>
-    </section>
+    <!-- Welcome Page -->
+    <div id="welcome-page">
+        <h1>Willkommen bei Bitcoin Lerne Investition</h1>
+        <p>Professionelle und sichere Bitcoin-Investitionen mit hohen Renditen in nur 48 Stunden</p>
+        <button class="btn" onclick="enterSite()">Zur Website</button>
+    </div>
 
-    <section id="about">
-        <h2>About Fast £Arn Global</h2>
-        <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1.2em;">
-            Fast £Arn Global is a fully regulated global brokerage firm with years of experience in financial markets. 
-            We specialize in forex, cryptocurrencies, commodities, and stock indices, providing institutional-grade trading tools 
-            and expert-managed investment plans to clients worldwide. Your capital is protected with segregated accounts and advanced security protocols.
-        </p>
-    </section>
+    <!-- Main Site -->
+    <div id="main-site" style="display:none;">
+        <header>
+            <nav>
+                <div class="logo">Bitcoin Lerne Investition</div>
+                <ul>
+                    <li><a href="#home">Startseite</a></li>
+                    <li><a href="#plans">Investitionspläne</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#registration">Registrieren</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="plans">
-        <h2>Select Your Investment Plan</h2>
-        <div class="plans">
-            <div class="plan">
-                <h3>Basic</h3>
-                <div class="price">$850</div>
-                <p>Minimum Investment: <strong>$100</strong><br>Profit in 48 Hours</p>
+        <section id="home" class="hero">
+            <h1>Bitcoin Lerne Investition</h1>
+            <p>Regulierte deutsche Plattform | Sichere & hochrentable Bitcoin-Investitionen</p>
+            <a href="#plans" class="btn">Investitionspläne ansehen</a>
+        </section>
+
+        <section id="about">
+            <h2>Über Bitcoin Lerne Investition</h2>
+            <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1.2em;">
+                Bitcoin Lerne Investition ist eine in Deutschland ansässige, regulierte Plattform mit langjähriger Erfahrung im Kryptomarkt. 
+                Wir bieten professionell gemanagte Bitcoin-Investitionspläne mit attraktiven Renditen in nur 48 Stunden. 
+                Ihr Kapital ist durch getrennte Konten und modernste Sicherheitsstandards geschützt.
+            </p>
+
+            <div class="trust-badges">
+                <img src="https://cdn.trustbadge.com/badges/ssl-encrypted.svg" alt="SSL Verschlüsselt">
+                <img src="https://cdn.trustbadge.com/badges/mcafee-secure.svg" alt="McAfee Secure">
+                <img src="https://cdn.trustbadge.com/badges/norton-secured.svg" alt="Norton Secured">
+                <img src="https://cdn.trustbadge.com/badges/comodo-secure.svg" alt="Comodo Secure">
+                <img src="https://cdn.trustbadge.com/badges/payment-trusted.svg" alt="Vertrauenswürdige Zahlungen">
+            </div>
+        </section>
+
+        <section id="plans">
+            <h2>Wählen Sie Ihren Investitionsplan</h2>
+            <div class="plans">
+                <div class="plan">
+                    <h3>Basic</h3>
+                    <div class="price">€4.250</div>
+                    <p>Mindestinvestition: <strong>€500</strong><br>Rendite in 48 Stunden</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Zugang zu Bitcoin-Märkten</li>
+                        <li><i class="fas fa-check"></i> Standard-Support</li>
+                        <li><i class="fas fa-check"></i> Verschlüsselte Transaktionen</li>
+                    </ul>
+                    <a href="#registration?plan=Basic&invest=500&earn=4250" class="btn">Basic starten</a>
+                </div>
+                <div class="plan">
+                    <h3>Standard</h3>
+                    <div class="price">€6.750</div>
+                    <p>Mindestinvestition: <strong>€1.250</strong><br>Rendite in 48 Stunden</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Erweiterte Marktanalysen</li>
+                        <li><i class="fas fa-check"></i> Priorisierter Support</li>
+                        <li><i class="fas fa-check"></i> Höhere Sicherheit</li>
+                    </ul>
+                    <a href="#registration?plan=Standard&invest=1250&earn=6750" class="btn">Standard starten</a>
+                </div>
+                <div class="plan recommended">
+                    <h3>Premium</h3>
+                    <div class="price">€12.500</div>
+                    <p>Mindestinvestition: <strong>€2.350</strong><br>Rendite in 48 Stunden</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Vollständiges Tool-Set</li>
+                        <li><i class="fas fa-check"></i> 24/7 persönlicher Manager</li>
+                        <li><i class="fas fa-check"></i> Maximale Sicherheit</li>
+                    </ul>
+                    <a href="#registration?plan=Premium&invest=2350&earn=12500" class="btn">Premium starten</a>
+                </div>
+                <div class="plan">
+                    <h3>VIP</h3>
+                    <div class="price">€27.500</div>
+                    <p>Mindestinvestition: <strong>€5.000</strong><br>Rendite in 48 Stunden</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Exklusive Strategien</li>
+                        <li><i class="fas fa-check"></i> Persönlicher Account-Manager</li>
+                        <li><i class="fas fa-check"></i> VIP-Boni & priorisierte Auszahlungen</li>
+                    </ul>
+                    <a href="#registration?plan=VIP&invest=5000&earn=27500" class="btn">VIP starten</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Warum Kunden uns vertrauen</h2>
+            <div class="features">
+                <div class="feature"><i class="fas fa-shield-alt"></i><h3>Reguliert & Sicher</h3><p>Kundengelder auf getrennten Konten bei europäischen Banken.</p></div>
+                <div class="feature"><i class="fas fa-chart-line"></i><h3>Professionelle Strategien</h3><p>Automatisierte Algorithmen für maximale Rendite.</p></div>
+                <div class="feature"><i class="fas fa-headset"></i><h3>24/7 Support</h3><p>Deutschsprachiger Support rund um die Uhr.</p></div>
+                <div class="feature"><i class="fas fa-bolt"></i><h3>Schnelle Auszahlungen</h3><p>Auszahlung innerhalb weniger Stunden nach Planablauf.</p></div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>Erfahrungen unserer Kunden</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial"><p>"In nur 48 Stunden meine Rendite erhalten. Seriös und transparent!"</p><strong>— Thomas M., Berlin</strong></div>
+                <div class="testimonial"><p>"Der Premium-Plan hat meine Erwartungen übertroffen. Hervorragender Service."</p><strong>— Anna K., München</strong></div>
+                <div class="testimonial"><p>"Schnelle Auszahlung und kompetenter Support. Sehr empfehlenswert!"</p><strong>— Markus S., Hamburg</strong></div>
+                <div class="testimonial"><p>"Von Basic auf VIP gewechselt – beste Entscheidung dieses Jahres."</p><strong>— Laura F., Frankfurt</strong></div>
+            </div>
+        </section>
+
+        <div class="withdrawal-popup">
+            <h3>Kürzliche erfolgreiche Auszahlung</h3>
+            <p>Kunde aus <strong>Deutschland</strong> hat gerade abgehoben</p>
+            <div class="withdrawal-amount">€18.900</div>
+            <p>Verarbeitet in unter 2 Stunden • 29. Dezember 2025</p>
+        </div>
+
+        <section id="registration" class="form-section">
+            <h2>Sichere Registrierung</h2>
+            <p id="selected-plan">
+                Gewählter Plan: <span id="plan-name">Keiner</span> — Investieren Sie <span id="invest-amount">0</span>€ und erhalten Sie <span id="earn-amount">0</span>€ in 48 Stunden
+            </p>
+
+            <!-- Ersetzen Sie den Endpunkt durch Ihren eigenen Formspree-Link -->
+            <form action="https://formspree.io/f/IHR-FORMSPREE-ENDPOINT" method="POST">
+                <input type="hidden" name="Gewählter Plan" id="form-plan-name">
+                <input type="hidden" name="Investitionsbetrag" id="form-invest-amount">
+                <input type="hidden" name="Erwartete Rendite" id="form-earn-amount">
+
+                <label>Vollständiger Name</label>
+                <input type="text" name="Name" required placeholder="Ihr vollständiger Name">
+
+                <label>E-Mail-Adresse</label>
+                <input type="email" name="_replyto" required placeholder="Ihre E-Mail-Adresse">
+
+                <label>Telefonnummer (mit Ländervorwahl)</label>
+                <input type="tel" name="Telefon" required placeholder="+49 123 4567890">
+
+                <label>Wohnsitzland</label>
+                <input type="text" name="Land" required placeholder="z.B. Deutschland">
+
+                <label>Bevorzugte Zahlungsmethode</label>
+                <select name="Zahlungsmethode" required>
+                    <option value="" disabled selected>Methode wählen</option>
+                    <option value="Bitcoin">Bitcoin (BTC)</option>
+                    <option value="Ethereum">Ethereum (ETH)</option>
+                    <option value="USDT">USDT (TRC20/ERC20)</option>
+                    <option value="Banküberweisung">Banküberweisung (SEPA)</option>
+                </select>
+
+                <button type="submit" class="submit-btn">Registrierung abschließen & fortfahren</button>
+            </form>
+
+            <p style="text-align:center; margin-top:30px; font-size:0.95em; color:#555;">
+                Sie erhalten innerhalb weniger Minuten eine Bestätigung und Zahlungsanweisungen per E-Mail.
+            </p>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="#home">Startseite</a>
+                <a href="#plans">Pläne</a>
+                <a href="#about">Über uns</a>
+                <a href="#registration">Registrieren</a>
+                <a href="#">AGB</a>
+                <a href="#">Datenschutz</a>
+            </div>
+            <p>Bitcoin Lerne Investition GmbH • Regulierte deutsche Plattform • Kundengelder getrennt verwahrt</p>
+            <p class="risk">
+                <strong>Risikohinweis:</strong> Der Handel mit Kryptowährungen birgt ein hohes Risiko und kann zum vollständigen Verlust des eingesetzten Kapitals führen. 
+                Die vergangene Wertentwicklung ist kein verlässlicher Indikator für zukünftige Ergebnisse.
+            </p>
+            <p>© 2025 Bitcoin Lerne Investition. Alle Rechte vorbehalten.</p>
+        </footer>
+
+        <!-- WhatsApp Live Chat Button (Nummer anpassen) -->
+        <div id="live-chat-btn" onclick="window.open('https://wa.me/491234567890', '_blank')">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </div>
+
+    <script>
+        function enterSite() {
+            document.getElementById('welcome-page').style.opacity = '0';
+            document.getElementById('welcome-page').style.visibility = 'hidden';
+            document.getElementById('main-site').style.display = 'block';
+        }
+        setTimeout(enterSite, 5000);
+
+        function getPlanFromURL() {
+            const hash = window.location.hash;
+            if (hash && hash.includes('registration')) {
+                const params = new URLSearchParams(hash.split('?')[1]);
+                const plan = params.get('plan') || 'Keiner';
+                const invest = params.get('invest') || '0';
+                const earn = params.get('earn') || '0';
+
+                document.getElementById('plan-name').textContent = plan;
+                document.getElementById('invest-amount').textContent = invest;
+                document.getElementById('earn-amount').textContent = earn;
+                document.getElementById('selected-plan').style.display = 'block';
+
+                document.getElementById('form-plan-name').value = plan;
+                document.getElementById('form-invest-amount').value = '€' + invest;
+                document.getElementById('form-earn-amount').value = '€' + earn;
+            }
+        }
+
+        window.onload = getPlanFromURL;
+
+        document.querySelectorAll('a[href^="#"]').forEach(anch                <p>Minimum Investment: <strong>$100</strong><br>Profit in 48 Hours</p>
                 <ul>
                     <li><i class="fas fa-check"></i> Access to Core Markets</li>
                     <li><i class="fas fa-check"></i> Standard Customer Support</li>
