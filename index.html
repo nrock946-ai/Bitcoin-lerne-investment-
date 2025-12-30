@@ -3,84 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Lerne Investition - Professionelle Bitcoin-Investitionsplattform</title>
-    <meta name="description" content="Bitcoin Lerne Investition ist eine regulierte deutsche Plattform für sichere und hochrentable Bitcoin-Investitionen. Erzielen Sie attraktive Renditen in nur 48 Stunden.">
+    <title>Deutsche Bitcoin-Investition - Sichere & Hochrentable Krypto-Plattform</title>
+    <meta name="description" content="Deutsche Bitcoin-Investition ist eine regulierte deutsche Plattform für professionelle Bitcoin- und Kryptowährungs-Investitionen mit attraktiven Renditen.">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #003366;     /* Tiefes Deutsches Blau */
-            --accent: #ffcc00;      /* Goldgelb – vertrauensvoll und premium */
+            --primary: #000000;     /* Tiefes Schwarz – elegant und luxuriös */
+            --accent: #d4af37;      /* Edles Gold – premium und vertrauenswürdig */
             --text: #ffffff;
-            --light: #f8f9fa;
-            --dark: #1a1a1a;
-            --gray: #e9ecef;
+            --light: #121212;       /* Dunkles Grau/Schwarz für Hintergrund */
+            --dark: #000000;
+            --gray: #1e1e1e;
+            --card-bg: #1a1a1a;     /* Etwas helleres Schwarz für Karten */
         }
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light); color: #333; line-height: 1.7; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); }
-
-        /* Welcome Page */
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--light); color: #e0e0e0; line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--accent); }
         #welcome-page {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
-            background: linear-gradient(rgba(0,51,102,0.92), rgba(0,51,102,0.92)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(0,0,0,0.92), rgba(0,0,0,0.92)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: var(--text); z-index: 9999;
-            transition: opacity 1.5s ease-out, visibility 1.5s;
+            transition: opacity 1.5s ease-out, visibility: 1.5s;
         }
-        #welcome-page h1 { font-size: 5em; margin: 0; }
+        #welcome-page h1 { font-size: 5em; margin: 0; color: var(--accent); text-shadow: 0 0 20px rgba(212,175,55,0.5); }
         #welcome-page p { font-size: 1.8em; max-width: 800px; margin: 20px 0 40px; }
-        #welcome-page .btn { padding: 18px 50px; font-size: 1.5em; }
-
-        header { background: var(--primary); color: var(--text); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        #welcome-page .btn { padding: 18px 50px; font-size: 1.5em; background: var(--accent); color: var(--primary); }
+        header { background: var(--primary); color: var(--text); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(212,175,55,0.2); }
         nav { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
-        .logo { font-size: 1.8em; font-weight: bold; }
+        .logo { font-size: 1.8em; font-weight: bold; color: var(--accent); }
         nav ul { list-style: none; display: flex; gap: 35px; margin: 0; padding: 0; }
-        nav a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s; cursor: pointer; }
         nav a:hover { color: var(--accent); }
-        .hero { background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.unsplash.com/photo-1621504450181-5d356f61d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; text-align: center; padding: 180px 20px 120px; color: var(--text); }
-        .hero h1 { font-size: 4em; margin: 0 0 20px; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1621504450181-5d356f61d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; text-align: center; padding: 180px 20px 120px; color: var(--text); }
+        .hero h1 { font-size: 4em; margin: 0 0 20px; color: var(--accent); }
         .hero p { font-size: 1.6em; max-width: 800px; margin: 0 auto 30px; }
         .btn { background: var(--accent); color: var(--primary); padding: 16px 36px; border: none; border-radius: 6px; font-size: 1.2em; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
-        .btn:hover { background: #ffd633; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,204,0,0.3); }
+        .btn:hover { background: #e6c244; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(212,175,55,0.4); }
         section { max-width: 1300px; margin: 100px auto; padding: 0 30px; }
-        h2 { text-align: center; font-size: 2.8em; margin-bottom: 50px; }
+        h2 { text-align: center; font-size: 2.8em; margin-bottom: 50px; color: var(--accent); }
         .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .plan { background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; padding: 50px 30px; position: relative; transition: all 0.4s; }
-        .plan:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .plan { background: var(--card-bg); border-radius: 12px; box-shadow: 0 10px 30px rgba(212,175,55,0.1); text-align: center; padding: 50px 30px; position: relative; transition: all 0.4s; color: #e0e0e0; }
+        .plan:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(212,175,55,0.2); }
         .plan.recommended { border: 4px solid var(--accent); }
-        .plan.recommended::before { content: "EMPFOHLEN"; background: var(--accent); color: var(--primary); padding: 12px 30px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); border-radius: 6px; font-weight: bold; font-size: 0.9em; }
-        .plan h3 { font-size: 2.2em; margin-bottom: 20px; }
+        .plan.recommended::before { content: "BELIEBT"; background: var(--accent); color: var(--primary); padding: 12px 30px; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); border-radius: 6px; font-weight: bold; font-size: 0.9em; }
+        .plan h3 { font-size: 2.2em; margin-bottom: 20px; color: var(--accent); }
         .plan .price { font-size: 4em; font-weight: bold; color: var(--accent); margin: 25px 0; }
-        .plan ul { list-style: none; padding: 0; margin: 30px 0; }
-        .plan li { margin: 18px 0; font-size: 1.1em; }
-        .plan li i { color: var(--accent); margin-right: 10px; }
-        .form-section { max-width: 900px; margin: 100px auto; padding: 50px; background: white; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        #selected-plan { text-align: center; font-size: 1.4em; font-weight: bold; color: var(--primary); margin-bottom: 40px; padding: 20px; background: #f0f4ff; border-radius: 8px; }
+        .form-section { max-width: 900px; margin: 100px auto; padding: 50px; background: var(--card-bg); border-radius: 12px; box-shadow: 0 15px 40px rgba(212,175,55,0.1); color: #e0e0e0; }
+        #selected-plan { text-align: center; font-size: 1.4em; font-weight: bold; color: var(--accent); margin-bottom: 40px; padding: 20px; background: rgba(212,175,55,0.1); border-radius: 8px; }
         form { display: grid; gap: 25px; }
-        label { font-weight: 600; color: var(--primary); }
-        input, select { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 1.1em; }
-        .submit-btn { background: var(--accent); color: var(--primary); padding: 18px; font-size: 1.3em; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s; }
-        .submit-btn:hover { background: #ffd633; transform: translateY(-3px); }
+        label { font-weight: 600; color: var(--accent); }
+        input, select { width: 100%; padding: 15px; background: #2a2a2a; border: 1px solid #444; border-radius: 6px; font-size: 1.1em; color: white; }
+        .submit-btn { background: var(--accent); color: var(--primary); padding: 18px; font-size: 1.3em; }
+        .submit-btn:hover { background: #e6c244; }
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .feature { text-align: center; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+        .feature { text-align: center; padding: 30px; background: var(--card-bg); border-radius: 10px; box-shadow: 0 8px 25px rgba(212,175,55,0.1); color: #e0e0e0; }
         .feature i { font-size: 3em; color: var(--accent); margin-bottom: 20px; }
         .testimonials { background: var(--primary); color: var(--text); padding: 80px 30px; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1300px; margin: 0 auto; }
-        .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; font-style: italic; }
-        .testimonial strong { display: block; margin-top: 15px; font-style: normal; }
-        .withdrawal-popup { background: linear-gradient(135deg, #004080, #0066cc); color: white; padding: 30px; text-align: center; margin: 80px auto; max-width: 1300px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .withdrawal-popup h3 { font-size: 2.5em; margin: 0 0 20px; }
+        .testimonial { background: rgba(212,175,55,0.1); padding: 30px; border-radius: 10px; font-style: italic; }
+        .testimonial strong { display: block; margin-top: 15px; font-style: normal; color: var(--accent); }
+        .withdrawal-popup { background: linear-gradient(135deg, #1a1a1a, #2a2a2a); color: white; padding: 30px; text-align: center; margin: 80px auto; max-width: 1300px; border-radius: 12px; box-shadow: 0 10px 30px rgba(212,175,55,0.2); border: 1px solid var(--accent); }
+        .withdrawal-popup h3 { font-size: 2.5em; margin: 0 0 20px; color: var(--accent); }
         .withdrawal-popup p { font-size: 1.3em; margin: 0; }
         .withdrawal-amount { font-size: 3.5em; font-weight: bold; color: var(--accent); margin: 15px 0; }
         .trust-badges { text-align: center; margin: 50px 0; }
-        .trust-badges img { height: 70px; margin: 0 25px; filter: grayscale(80%); transition: filter 0.3s; }
-        .trust-badges img:hover { filter: grayscale(0%); }
-        footer { background: var(--dark); color: #aaa; padding: 60px 30px 30px; text-align: center; }
+        .trust-badges img { height: 70px; margin: 0 25px; filter: brightness(1.5); }
+        footer { background: var(--dark); color: #888; padding: 60px 30px 30px; text-align: center; }
         .footer-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap; }
-        .footer-links a { color: #aaa; text-decoration: none; transition: color 0.3s; }
+        .footer-links a { color: #888; text-decoration: none; transition: color 0.3s; }
         .footer-links a:hover { color: var(--accent); }
         #live-chat-btn {
             position: fixed;
@@ -95,18 +89,28 @@
             align-items: center;
             justify-content: center;
             font-size: 1.8em;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.4);
             cursor: pointer;
             z-index: 1001;
             transition: all 0.3s;
         }
-        #live-chat-btn:hover { transform: scale(1.1); }
-
+        #live-chat-btn:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(212,175,55,0.6); }
+        .dashboard { max-width: 900px; margin: 100px auto; padding: 50px; background: var(--card-bg); border-radius: 12px; box-shadow: 0 15px 40px rgba(212,175,55,0.1); text-align: center; color: #e0e0e0; }
+        .balance { font-size: 4em; font-weight: bold; color: var(--accent); margin: 30px 0; }
+        .btc-address { background: #2a2a2a; padding: 20px; border-radius: 8px; word-break: break-all; font-family: monospace; margin-top: 30px; }
+        .hidden { display: none; }
+        #auth-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2000;
+        }
+        #auth-modal .modal-content {
+            background: var(--card-bg); padding: 40px; border-radius: 12px; max-width: 500px; width: 90%; border: 1px solid var(--accent); }
         @media (max-width: 768px) {
             #welcome-page h1 { font-size: 3.5em; }
-            #welcome-page p { font-size: 1.4em; }
             .hero h1 { font-size: 2.8em; }
-            nav ul { flex-direction: column; gap: 15px; }
             .plans { grid-template-columns: 1fr; }
         }
     </style>
@@ -115,37 +119,39 @@
 
     <!-- Welcome Page -->
     <div id="welcome-page">
-        <h1>Willkommen bei Bitcoin Lerne Investition</h1>
-        <p>Professionelle und sichere Bitcoin-Investitionen mit hohen Renditen in nur 48 Stunden</p>
+        <h1>Willkommen bei Deutsche Bitcoin-Investition</h1>
+        <p>Die führende deutsche Plattform für sichere und hochrentable Bitcoin-Investitionen</p>
         <button class="btn" onclick="enterSite()">Zur Website</button>
     </div>
 
     <!-- Main Site -->
-    <div id="main-site" style="display:none;">
+    <div id="main-site" class="hidden">
         <header>
             <nav>
-                <div class="logo">Bitcoin Lerne Investition</div>
+                <div class="logo">Deutsche Bitcoin-Investition</div>
                 <ul>
                     <li><a href="#home">Startseite</a></li>
                     <li><a href="#plans">Investitionspläne</a></li>
                     <li><a href="#about">Über uns</a></li>
-                    <li><a href="#registration">Registrieren</a></li>
+                    <li><a id="auth-link">Anmelden / Registrieren</a></li>
+                    <li><a id="dashboard-link" class="hidden" href="#dashboard">Mein Dashboard</a></li>
+                    <li><a id="logout-link" class="hidden" onclick="logout()">Abmelden</a></li>
                 </ul>
             </nav>
         </header>
 
         <section id="home" class="hero">
-            <h1>Bitcoin Lerne Investition</h1>
-            <p>Regulierte deutsche Plattform | Sichere & hochrentable Bitcoin-Investitionen</p>
-            <a href="#plans" class="btn">Investitionspläne ansehen</a>
+            <h1>Deutsche Bitcoin-Investition</h1>
+            <p>Regulierte deutsche Krypto-Plattform | Sichere & attraktive Renditen</p>
+            <a href="#plans" class="btn">Jetzt investieren</a>
         </section>
 
         <section id="about">
-            <h2>Über Bitcoin Lerne Investition</h2>
+            <h2>Über Deutsche Bitcoin-Investition</h2>
             <p style="text-align:center; max-width:900px; margin:0 auto; font-size:1.2em;">
-                Bitcoin Lerne Investition ist eine in Deutschland ansässige, regulierte Plattform mit langjähriger Erfahrung im Kryptomarkt. 
-                Wir bieten professionell gemanagte Bitcoin-Investitionspläne mit attraktiven Renditen in nur 48 Stunden. 
-                Ihr Kapital ist durch getrennte Konten und modernste Sicherheitsstandards geschützt.
+                Deutsche Bitcoin-Investition ist eine in Deutschland regulierte Plattform mit jahrelanger Expertise im Kryptobereich. 
+                Wir bieten professionell verwaltete Investitionspläne mit hohen Renditen in kurzer Zeit. 
+                Ihr Vermögen ist durch getrennte Konten und höchste Sicherheitsstandards geschützt.
             </p>
 
             <div class="trust-badges">
@@ -161,48 +167,48 @@
             <h2>Wählen Sie Ihren Investitionsplan</h2>
             <div class="plans">
                 <div class="plan">
-                    <h3>Basic</h3>
+                    <h3>Starter</h3>
                     <div class="price">€4.250</div>
                     <p>Mindestinvestition: <strong>€500</strong><br>Rendite in 48 Stunden</p>
                     <ul>
-                        <li><i class="fas fa-check"></i> Zugang zu Bitcoin-Märkten</li>
+                        <li><i class="fas fa-check"></i> Zugang zum Bitcoin-Markt</li>
                         <li><i class="fas fa-check"></i> Standard-Support</li>
                         <li><i class="fas fa-check"></i> Verschlüsselte Transaktionen</li>
                     </ul>
-                    <a href="#registration?plan=Basic&invest=500&earn=4250" class="btn">Basic starten</a>
+                    <a href="#registration?plan=Starter&invest=500&earn=4250" class="btn">Starter wählen</a>
                 </div>
                 <div class="plan">
-                    <h3>Standard</h3>
+                    <h3>Advanced</h3>
                     <div class="price">€6.750</div>
                     <p>Mindestinvestition: <strong>€1.250</strong><br>Rendite in 48 Stunden</p>
                     <ul>
-                        <li><i class="fas fa-check"></i> Erweiterte Marktanalysen</li>
+                        <li><i class="fas fa-check"></i> Erweiterte Analysen</li>
                         <li><i class="fas fa-check"></i> Priorisierter Support</li>
-                        <li><i class="fas fa-check"></i> Höhere Sicherheit</li>
+                        <li><i class="fas fa-check"></i> Erhöhte Sicherheit</li>
                     </ul>
-                    <a href="#registration?plan=Standard&invest=1250&earn=6750" class="btn">Standard starten</a>
+                    <a href="#registration?plan=Advanced&invest=1250&earn=6750" class="btn">Advanced wählen</a>
                 </div>
                 <div class="plan recommended">
-                    <h3>Premium</h3>
+                    <h3>Professional</h3>
                     <div class="price">€12.500</div>
                     <p>Mindestinvestition: <strong>€2.350</strong><br>Rendite in 48 Stunden</p>
                     <ul>
-                        <li><i class="fas fa-check"></i> Vollständiges Tool-Set</li>
-                        <li><i class="fas fa-check"></i> 24/7 persönlicher Manager</li>
-                        <li><i class="fas fa-check"></i> Maximale Sicherheit</li>
+                        <li><i class="fas fa-check"></i> Komplettes Toolset</li>
+                        <li><i class="fas fa-check"></i> 24/7 persönlicher Betreuer</li>
+                        <li><i class="fas fa-check"></i> Höchste Sicherheitsstufe</li>
                     </ul>
-                    <a href="#registration?plan=Premium&invest=2350&earn=12500" class="btn">Premium starten</a>
+                    <a href="#registration?plan=Professional&invest=2350&earn=12500" class="btn">Professional wählen</a>
                 </div>
                 <div class="plan">
-                    <h3>VIP</h3>
+                    <h3>Premium</h3>
                     <div class="price">€27.500</div>
                     <p>Mindestinvestition: <strong>€5.000</strong><br>Rendite in 48 Stunden</p>
                     <ul>
                         <li><i class="fas fa-check"></i> Exklusive Strategien</li>
-                        <li><i class="fas fa-check"></i> Persönlicher Account-Manager</li>
-                        <li><i class="fas fa-check"></i> VIP-Boni & priorisierte Auszahlungen</li>
+                        <li><i class="fas fa-check"></i> Persönlicher Manager</li>
+                        <li><i class="fas fa-check"></i> VIP-Vorteile & priorisierte Auszahlung</li>
                     </ul>
-                    <a href="#registration?plan=VIP&invest=5000&earn=27500" class="btn">VIP starten</a>
+                    <a href="#registration?plan=Premium&invest=5000&earn=27500" class="btn">Premium wählen</a>
                 </div>
             </div>
         </section>
@@ -210,38 +216,37 @@
         <section class="features">
             <h2>Warum Kunden uns vertrauen</h2>
             <div class="features">
-                <div class="feature"><i class="fas fa-shield-alt"></i><h3>Reguliert & Sicher</h3><p>Kundengelder auf getrennten Konten bei europäischen Banken.</p></div>
-                <div class="feature"><i class="fas fa-chart-line"></i><h3>Professionelle Strategien</h3><p>Automatisierte Algorithmen für maximale Rendite.</p></div>
-                <div class="feature"><i class="fas fa-headset"></i><h3>24/7 Support</h3><p>Deutschsprachiger Support rund um die Uhr.</p></div>
-                <div class="feature"><i class="fas fa-bolt"></i><h3>Schnelle Auszahlungen</h3><p>Auszahlung innerhalb weniger Stunden nach Planablauf.</p></div>
+                <div class="feature"><i class="fas fa-shield-alt"></i><h3>Reguliert & Sicher</h3><p>Kundengelder getrennt bei deutschen Banken verwahrt.</p></div>
+                <div class="feature"><i class="fas fa-chart-line"></i><h3>Professionelle Algorithmen</h3><p>Optimierte Strategien für maximale Rendite.</p></div>
+                <div class="feature"><i class="fas fa-headset"></i><h3>24/7 Deutsch-Support</h3><p>Kompetenter Support auf Deutsch jederzeit.</p></div>
+                <div class="feature"><i class="fas fa-bolt"></i><h3>Blitzschnelle Auszahlungen</h3><p>Geld innerhalb weniger Stunden auf Ihrem Konto.</p></div>
             </div>
         </section>
 
         <section class="testimonials">
-            <h2>Erfahrungen unserer Kunden</h2>
+            <h2>Kundenbewertungen</h2>
             <div class="testimonial-grid">
-                <div class="testimonial"><p>"In nur 48 Stunden meine Rendite erhalten. Seriös und transparent!"</p><strong>— Thomas M., Berlin</strong></div>
-                <div class="testimonial"><p>"Der Premium-Plan hat meine Erwartungen übertroffen. Hervorragender Service."</p><strong>— Anna K., München</strong></div>
-                <div class="testimonial"><p>"Schnelle Auszahlung und kompetenter Support. Sehr empfehlenswert!"</p><strong>— Markus S., Hamburg</strong></div>
-                <div class="testimonial"><p>"Von Basic auf VIP gewechselt – beste Entscheidung dieses Jahres."</p><strong>— Laura F., Frankfurt</strong></div>
+                <div class="testimonial"><p>"Pünktliche Auszahlung nach genau 48 Stunden. Sehr seriös und zuverlässig!"</p><strong>— Klaus B., Düsseldorf</strong></div>
+                <div class="testimonial"><p>"Der Professional-Plan hat meine Erwartungen übertroffen. Top-Service!"</p><strong>— Sabine H., Stuttgart</strong></div>
+                <div class="testimonial"><p>"Einfache Registrierung, schneller Support und hohe Rendite. Absolut empfehlenswert."</p><strong>— Michael R., Köln</strong></div>
+                <div class="testimonial"><p>"Von Starter auf Premium gewechselt – beste Investitionsentscheidung 2025."</p><strong>— Julia W., Hamburg</strong></div>
             </div>
         </section>
 
         <div class="withdrawal-popup">
             <h3>Kürzliche erfolgreiche Auszahlung</h3>
             <p>Kunde aus <strong>Deutschland</strong> hat gerade abgehoben</p>
-            <div class="withdrawal-amount">€18.900</div>
-            <p>Verarbeitet in unter 2 Stunden • 29. Dezember 2025</p>
+            <div class="withdrawal-amount">€21.400</div>
+            <p>Verarbeitet in unter 2 Stunden • 30. Dezember 2025</p>
         </div>
 
         <section id="registration" class="form-section">
-            <h2>Sichere Registrierung</h2>
+            <h2>Sichere Registrierung & Kontoerstellung</h2>
             <p id="selected-plan">
                 Gewählter Plan: <span id="plan-name">Keiner</span> — Investieren Sie <span id="invest-amount">0</span>€ und erhalten Sie <span id="earn-amount">0</span>€ in 48 Stunden
             </p>
 
-            <!-- Ersetzen Sie den Endpunkt durch Ihren eigenen Formspree-Link -->
-            <form action="https://formspree.io/f/IHR-FORMSPREE-ENDPOINT" method="POST">
+            <form action="https://formspree.io/f/mnjqwvlj" method="POST">
                 <input type="hidden" name="Gewählter Plan" id="form-plan-name">
                 <input type="hidden" name="Investitionsbetrag" id="form-invest-amount">
                 <input type="hidden" name="Erwartete Rendite" id="form-earn-amount">
@@ -249,30 +254,51 @@
                 <label>Vollständiger Name</label>
                 <input type="text" name="Name" required placeholder="Ihr vollständiger Name">
 
-                <label>E-Mail-Adresse</label>
+                <label>E-Mail-Adresse (wird Ihr Login)</label>
                 <input type="email" name="_replyto" required placeholder="Ihre E-Mail-Adresse">
 
+                <label>Passwort erstellen</label>
+                <input type="password" name="Passwort" required placeholder="Sicheres Passwort">
+
                 <label>Telefonnummer (mit Ländervorwahl)</label>
-                <input type="tel" name="Telefon" required placeholder="+49 123 4567890">
+                <input type="tel" name="Telefon" required placeholder="+49 176 12345678">
 
                 <label>Wohnsitzland</label>
                 <input type="text" name="Land" required placeholder="z.B. Deutschland">
 
                 <label>Bevorzugte Zahlungsmethode</label>
                 <select name="Zahlungsmethode" required>
-                    <option value="" disabled selected>Methode wählen</option>
-                    <option value="Bitcoin">Bitcoin (BTC)</option>
+                    <option value="" disabled selected>Methode auswählen</option>
+                    <option value="Bitcoin">Bitcoin (BTC) - Adresse unten</option>
                     <option value="Ethereum">Ethereum (ETH)</option>
                     <option value="USDT">USDT (TRC20/ERC20)</option>
-                    <option value="Banküberweisung">Banküberweisung (SEPA)</option>
+                    <option value="SEPA">SEPA-Überweisung</option>
                 </select>
 
-                <button type="submit" class="submit-btn">Registrierung abschließen & fortfahren</button>
+                <button type="submit" class="submit-btn">Konto erstellen & Investition starten</button>
             </form>
 
-            <p style="text-align:center; margin-top:30px; font-size:0.95em; color:#555;">
-                Sie erhalten innerhalb weniger Minuten eine Bestätigung und Zahlungsanweisungen per E-Mail.
+            <p style="text-align:center; margin-top:30px; font-size:0.95em; color:#888;">
+                Nach der Registrierung erhalten Sie eine Bestätigung per E-Mail. Zahlen Sie über Bitcoin an die folgende Adresse ein:<br>
+                <strong class="btc-address">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</strong><br>
+                <small>(Ersetzen Sie diese durch Ihre echte BTC-Wallet-Adresse!)</small>
             </p>
+        </section>
+
+        <section id="dashboard" class="dashboard hidden">
+            <h2>Ihr persönliches Dashboard</h2>
+            <p>Willkommen zurück, <span id="user-email"></span>!</p>
+            <div class="balance" id="user-balance">€0,00</div>
+            <p>Aktueller Kontostand</p>
+            <p>Investierter Betrag: <span id="user-invested">€0</span></p>
+            <p>Gewählter Plan: <span id="user-plan">Keiner</span></p>
+            <p>Erwartete Rendite: <span id="user-earnings">€0</span></p>
+            <div class="btc-address">
+                Einzahlungsadresse (Bitcoin):<br>
+                bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh<br>
+                <small>(Ersetzen Sie durch Ihre echte Adresse!)</small>
+            </div>
+            <button class="btn" onclick="alert('Auszahlungsanfrage wurde gesendet!')">Auszahlung anfordern</button>
         </section>
 
         <footer>
@@ -280,216 +306,164 @@
                 <a href="#home">Startseite</a>
                 <a href="#plans">Pläne</a>
                 <a href="#about">Über uns</a>
+                <a href="#dashboard">Mein Konto</a>
                 <a href="#registration">Registrieren</a>
                 <a href="#">AGB</a>
-                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
             </div>
-            <p>Bitcoin Lerne Investition GmbH • Regulierte deutsche Plattform • Kundengelder getrennt verwahrt</p>
+            <p>Deutsche Bitcoin-Investition GmbH • Vollständig reguliert in Deutschland • Kundengelder getrennt verwahrt</p>
             <p class="risk">
-                <strong>Risikohinweis:</strong> Der Handel mit Kryptowährungen birgt ein hohes Risiko und kann zum vollständigen Verlust des eingesetzten Kapitals führen. 
-                Die vergangene Wertentwicklung ist kein verlässlicher Indikator für zukünftige Ergebnisse.
+                <strong>Risikohinweis:</strong> Investitionen in Kryptowährungen sind hochspekulativ und können zum Totalverlust des eingesetzten Kapitals führen. 
+                Die frühere Performance ist kein Garant für zukünftige Ergebnisse.
             </p>
-            <p>© 2025 Bitcoin Lerne Investition. Alle Rechte vorbehalten.</p>
+            <p>© 2025 Deutsche Bitcoin-Investition. Alle Rechte vorbehalten.</p>
         </footer>
 
-        <!-- WhatsApp Live Chat Button (Nummer anpassen) -->
-        <div id="live-chat-btn" onclick="window.open('https://wa.me/491234567890', '_blank')">
-            <i class="fab fa-whatsapp"></i>
+        <!-- AI Support Chat Button -->
+        <div id="live-chat-btn" onclick="window.open('https://x.com/i/grok', '_blank')">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <!-- Auth Modal -->
+        <div id="auth-modal" class="hidden">
+            <div class="modal-content">
+                <h2 id="auth-title">Anmelden</h2>
+                <form id="auth-form">
+                    <label>E-Mail</label>
+                    <input type="email" id="auth-email" required>
+                    <label>Passwort</label>
+                    <input type="password" id="auth-password" required>
+                    <button type="submit" class="btn" style="width:100%; margin-top:20px;">Einloggen / Registrieren</button>
+                </form>
+                <p style="text-align:center; margin-top:20px;">
+                    Noch kein Konto? <a id="switch-to-signup" style="color:var(--accent); cursor:pointer;">Registrieren</a>
+                </p>
+                <p style="text-align:center;">
+                    <a id="switch-to-login" class="hidden" style="color:var(--accent); cursor:pointer;">Bereits registriert? Anmelden</a>
+                </p>
+            </div>
         </div>
     </div>
 
-    <script>
-        function enterSite() {
-            document.getElementById('welcome-page').style.opacity = '0';
-            document.getElementById('welcome-page').style.visibility = 'hidden';
-            document.getElementById('main-site').style.display = 'block';
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+      import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDxdlTY26Emsa1oVdYmqeFzc_CeiByHmo",
+        authDomain: "deutsche-bitcoin-investi-37372.firebaseapp.com",
+        projectId: "deutsche-bitcoin-investi-37372",
+        storageBucket: "deutsche-bitcoin-investi-37372.firebasestorage.app",
+        messagingSenderId: "92178669934",
+        appId: "1:92178669934:web:97bd17518e1c7f76b3e17f"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      onAuthStateChanged(auth, async (user) => {
+        if (user && user.emailVerified) {
+          document.getElementById('auth-link').classList.add('hidden');
+          document.getElementById('dashboard-link').classList.remove('hidden');
+          document.getElementById('logout-link').classList.remove('hidden');
+          document.getElementById('auth-modal').classList.add('hidden');
+
+          const userDoc = await getDoc(doc(db, "users", user.uid));
+          if (userDoc.exists()) {
+            const data = userDoc.data();
+            document.getElementById('user-email').textContent = user.email;
+            document.getElementById('user-balance').textContent = `€${data.balance || 0},00`;
+            document.getElementById('user-invested').textContent = `€${data.invested || 0}`;
+            document.getElementById('user-plan').textContent = data.plan || 'Keiner';
+            document.getElementById('user-earnings').textContent = `€${data.earnings || 0}`;
+          }
+          document.getElementById('dashboard').classList.remove('hidden');
+          document.getElementById('dashboard').scrollIntoView();
+        } else {
+          document.getElementById('auth-link').classList.remove('hidden');
+          document.getElementById('dashboard-link').classList.add('hidden');
+          document.getElementById('logout-link').classList.add('hidden');
+          document.getElementById('dashboard').classList.add('hidden');
         }
-        setTimeout(enterSite, 5000);
+      });
 
-        function getPlanFromURL() {
-            const hash = window.location.hash;
-            if (hash && hash.includes('registration')) {
-                const params = new URLSearchParams(hash.split('?')[1]);
-                const plan = params.get('plan') || 'Keiner';
-                const invest = params.get('invest') || '0';
-                const earn = params.get('earn') || '0';
+      document.getElementById('auth-link').onclick = () => document.getElementById('auth-modal').classList.remove('hidden');
 
-                document.getElementById('plan-name').textContent = plan;
-                document.getElementById('invest-amount').textContent = invest;
-                document.getElementById('earn-amount').textContent = earn;
-                document.getElementById('selected-plan').style.display = 'block';
+      document.getElementById('switch-to-signup').onclick = () => {
+        document.getElementById('auth-title').textContent = 'Registrieren';
+        document.getElementById('switch-to-signup').style.display = 'none';
+        document.getElementById('switch-to-login').style.display = 'block';
+      };
 
-                document.getElementById('form-plan-name').value = plan;
-                document.getElementById('form-invest-amount').value = '€' + invest;
-                document.getElementById('form-earn-amount').value = '€' + earn;
-            }
-        }
+      document.getElementById('switch-to-login').onclick = () => {
+        document.getElementById('auth-title').textContent = 'Anmelden';
+        document.getElementById('switch-to-signup').style.display = 'block';
+        document.getElementById('switch-to-login').style.display = 'none';
+      };
 
-        window.onload = getPlanFromURL;
+      document.getElementById('auth-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('auth-email').value.trim();
+        const password = document.getElementById('auth-password').value;
+        const isSignup = document.getElementById('auth-title').textContent === 'Registrieren';
 
-        document.querySelectorAll('a[href^="#"]').forEach(anch                <p>Minimum Investment: <strong>$100</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Access to Core Markets</li>
-                    <li><i class="fas fa-check"></i> Standard Customer Support</li>
-                    <li><i class="fas fa-check"></i> Encrypted Transactions</li>
-                </ul>
-                <a href="#registration?plan=Basic&invest=100&earn=850" class="btn">Start with Basic</a>
-            </div>
-            <div class="plan">
-                <h3>Standard</h3>
-                <div class="price">$1,350</div>
-                <p>Minimum Investment: <strong>$250</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Advanced Market Analytics</li>
-                    <li><i class="fas fa-check"></i> Priority Support</li>
-                    <li><i class="fas fa-check"></i> Enhanced Security</li>
-                </ul>
-                <a href="#registration?plan=Standard&invest=250&earn=1350" class="btn">Start with Standard</a>
-            </div>
-            <div class="plan recommended">
-                <h3>Premium</h3>
-                <div class="price">$2,500</div>
-                <p>Minimum Investment: <strong>$470</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Full Suite of Trading Tools</li>
-                    <li><i class="fas fa-check"></i> 24/7 Dedicated Manager</li>
-                    <li><i class="fas fa-check"></i> Highest Level Security</li>
-                </ul>
-                <a href="#registration?plan=Premium&invest=470&earn=2500" class="btn">Start with Premium</a>
-            </div>
-            <div class="plan">
-                <h3>VIP</h3>
-                <div class="price">$5,500</div>
-                <p>Minimum Investment: <strong>$1,000</strong><br>Profit in 48 Hours</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Exclusive Strategies</li>
-                    <li><i class="fas fa-check"></i> Personal Account Manager</li>
-                    <li><i class="fas fa-check"></i> VIP Bonuses & Priority Withdrawals</li>
-                </ul>
-                <a href="#registration?plan=VIP&invest=1000&earn=5500" class="btn">Start with VIP</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <h2>Why Investors Trust Us</h2>
-        <div class="features">
-            <div class="feature"><i class="fas fa-shield-alt"></i><h3>Regulated & Secure</h3><p>Client funds held in segregated accounts with top-tier banks.</p></div>
-            <div class="feature"><i class="fas fa-chart-line"></i><h3>Expert Strategies</h3><p>Professional trading algorithms delivering consistent returns.</p></div>
-            <div class="feature"><i class="fas fa-headset"></i><h3>24/7 Support</h3><p>Multilingual support team available around the clock.</p></div>
-            <div class="feature"><i class="fas fa-bolt"></i><h3>Instant Withdrawals</h3><p>Process payouts within hours after plan maturity.</p></div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <h2>Client Success Stories</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial"><p>"Received my profits exactly 48 hours after investing. Professional and transparent throughout."</p><strong>— James R., United Kingdom</strong></div>
-            <div class="testimonial"><p>"The Premium plan exceeded my expectations. Support team is outstanding."</p><strong>— Maria L., Germany</strong></div>
-            <div class="testimonial"><p>"Trusted platform with fast payouts. Highly recommend to serious investors."</p><strong>— Ahmed K., UAE</strong></div>
-        </div>
-    </section>
-
-    <!-- Fake Recent Withdrawal Popup Banner -->
-    <div class="withdrawal-popup">
-        <h3>Recent Successful Withdrawal</h3>
-        <p>Client from <strong>Canada</strong> just withdrew</p>
-        <div class="withdrawal-amount">$4,720.00</div>
-        <p>Processed in under 2 hours • December 26, 2025</p>
-    </div>
-
-    <section id="registration" class="form-section">
-        <h2>Secure Registration</h2>
-        <p id="selected-plan">
-            Selected Plan: <span id="plan-name">None</span> — Invest \( <span id="invest-amount">0</span> to Earn \)<span id="earn-amount">0</span> in 48 hours
-        </p>
-
-        <form action="https://formspree.io/f/meeqjzpn" method="POST">
-            <input type="hidden" name="Selected Plan" id="form-plan-name">
-            <input type="hidden" name="Investment Amount" id="form-invest-amount">
-            <input type="hidden" name="Expected Earnings" id="form-earn-amount">
-
-            <label>Full Name</label>
-            <input type="text" name="Full Name" required placeholder="Your full name">
-
-            <label>Email Address</label>
-            <input type="email" name="_replyto" required placeholder="Your email address">
-
-            <label>Phone Number (with country code)</label>
-            <input type="tel" name="Phone Number" required placeholder="+1 234 567 8900">
-
-            <label>Country of Residence</label>
-            <input type="text" name="Country" required placeholder="e.g., United States">
-
-            <label>Preferred Payment Method</label>
-            <select name="Payment Method" required>
-                <option value="" disabled selected>Choose method</option>
-                <option value="Bitcoin">Bitcoin (BTC)</option>
-                <option value="Ethereum">Ethereum (ETH)</option>
-                <option value="USDT">USDT (TRC20/ERC20)</option>
-                <option value="Bank Wire">Bank Wire Transfer</option>
-            </select>
-
-            <button type="submit" class="submit-btn">Complete Registration & Proceed</button>
-        </form>
-
-        <p style="text-align:center; margin-top:30px; font-size:0.95em; color:#555;">
-            You will receive confirmation and payment instructions via email within minutes.
-        </p>
-    </section>
-
-    <footer>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#plans">Plans</a>
-            <a href="#about">About</a>
-            <a href="#registration">Register</a>
-            <a href="#">Terms</a>
-            <a href="#">Privacy Policy</a>
-        </div>
-        <p class="reg-info">Fast £Arn Global Ltd • Regulated International Broker • Client funds segregated</p>
-        <p class="risk">
-            <strong>Risk Disclosure:</strong> Trading financial instruments carries a high level of risk and may result in the loss of all invested capital. 
-            Past performance is not indicative of future results. Please ensure you fully understand the risks and seek independent advice if necessary.
-        </p>
-        <p>&copy; 2025 Fast £Arn Global. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function getPlanFromURL() {
-            const hash = window.location.hash;
-            if (hash && hash.includes('registration')) {
-                const params = new URLSearchParams(hash.split('?')[1]);
-                const plan = params.get('plan') || 'None';
-                const invest = params.get('invest') || '0';
-                const earn = params.get('earn') || '0';
-
-                document.getElementById('plan-name').textContent = plan;
-                document.getElementById('invest-amount').textContent = invest;
-                document.getElementById('earn-amount').textContent = earn;
-                document.getElementById('selected-plan').style.display = 'block';
-
-                document.getElementById('form-plan-name').value = plan;
-                document.getElementById('form-invest-amount').value = '$' + invest;
-                document.getElementById('form-earn-amount').value = '$' + earn;
-            }
-        }
-
-        window.onload = getPlanFromURL;
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetHref = this.getAttribute('href');
-                const targetId = targetHref.split('?')[0];
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-                history.pushState(null, null, targetHref);
-                getPlanFromURL();
+        try {
+          let userCredential;
+          if (isSignup) {
+            userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            await sendEmailVerification(userCredential.user);
+            await setDoc(doc(db, "users", userCredential.user.uid), {
+              email,
+              balance: 0,
+              invested: 0,
+              plan: "Keiner",
+              earnings: 0,
+              createdAt: new Date(),
+              emailVerified: false
             });
-        });
+            alert('Registrierung erfolgreich! Bitte überprüfen Sie Ihre E-Mail für den Verifizierungslink.');
+          } else {
+            userCredential = await signInWithEmailAndPassword(auth, email, password);
+            if (!userCredential.user.emailVerified) {
+              await sendEmailVerification(userCredential.user);
+              alert('Bitte verifizieren Sie Ihre E-Mail. Neuer Link gesendet.');
+            }
+          }
+          document.getElementById('auth-modal').classList.add('hidden');
+        } catch (err) {
+          alert('Fehler: ' + err.message);
+        }
+      };
+
+      window.logout = () => signOut(auth);
+
+      function enterSite() {
+        document.getElementById('welcome-page').style.opacity = '0';
+        document.getElementById('welcome-page').style.visibility = 'hidden';
+        document.getElementById('main-site').classList.remove('hidden');
+      }
+      setTimeout(enterSite, 5000);
+
+      function getPlanFromURL() {
+        if (location.hash.includes('registration')) {
+          const params = new URLSearchParams(location.hash.split('?')[1]);
+          document.getElementById('plan-name').textContent = params.get('plan') || 'Keiner';
+          document.getElementById('invest-amount').textContent = params.get('invest') || '0';
+          document.getElementById('earn-amount').textContent = params.get('earn') || '0';
+          document.getElementById('selected-plan').style.display = 'block';
+        }
+      }
+      getPlanFromURL();
+
+      document.querySelectorAll('a[href^="#"]').forEach(a => a.onclick = (e) => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({behavior: 'smooth'});
+        history.pushState(null, null, a.getAttribute('href'));
+        getPlanFromURL();
+      });
     </script>
 </body>
-  </html>
+</html>
